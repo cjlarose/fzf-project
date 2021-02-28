@@ -25,16 +25,6 @@ function! s:switchToProjectDir(projectLine)
     if s:gitInit !=# 'none'
       call s:initGitRepoIfRequired(s:gitInit)
     endif
-
-    if s:chooseFile
-      call fzfproject#find#file() 
-      " Fixes issue with NeoVim
-      " See https://github.com/junegunn/fzf/issues/426#issuecomment-158115912
-      if has("nvim") && !has("nvim-0.5.0")
-        call feedkeys('i')
-      endif
-    endif
-
   finally
     let &autochdir = autochdir
   endtry
