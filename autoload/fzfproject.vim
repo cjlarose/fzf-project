@@ -21,7 +21,8 @@ function! s:switchToProjectDir(projectLine)
     set noautochdir
     let l:parts = matchlist(a:projectLine, '\(\S\+\)\s\+\(\S\+\)')
     let l:path = l:parts[2] . '/' . l:parts[1]
-    execute 'cd ' . l:path
+    execute 'tabnew'
+    execute 'tcd' l:path
     if s:gitInit !=# 'none'
       call s:initGitRepoIfRequired(s:gitInit)
     endif
