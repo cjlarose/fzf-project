@@ -26,6 +26,7 @@ function! s:switchToProjectDir(projectLine)
     if s:gitInit !=# 'none'
       call s:initGitRepoIfRequired(s:gitInit)
     endif
+    execute 'CreateGitTerminalBuffer'
   finally
     let &autochdir = autochdir
   endtry
