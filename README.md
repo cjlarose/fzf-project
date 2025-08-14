@@ -31,13 +31,6 @@ Running `FzfSwitchProject` in command mode will produce a list of folders from
 within your workspace folders. When you select a project, the working directory
 is changed and you are presented with a fzf list of files to switch to.
 
-## AutoRooting
-
-Installing `FzfSwitchProject` will automatically `cd` to the root directory of
-any given project when you open a file. It does this by recursively locating the
-nearest `.git` folder in the directory hierarchy. For this reason, is
-recommended to use `git` with this plugin
-
 ## Git Initialisation
 
 To assist with the above, if you switch to a folder that does not contain a
