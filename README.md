@@ -13,7 +13,6 @@ dotfiles.
 
 ```vim
 Plug 'junegunn/fzf.vim' "requirement from benwainwright/fzf-project
-Plug 'tpope/vim-fugitive' "requirement from benwainwright/fzf-project
 Plug 'benwainwright/fzf-project'
 ```
 
@@ -21,7 +20,6 @@ Plug 'benwainwright/fzf-project'
 
 ```vim
 Plugin 'junegunn/fzf.vim' "requirement from benwainwright/fzf-project
-Plugin 'tpope/vim-fugitive' "requirement from benwainwright/fzf-project
 Plugin 'benwainwright/fzf-project'
 ```
 
@@ -94,4 +92,3 @@ Don't automatically open a file picker once project is selected
 ## Dependencies
 
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [fugitive](https://github.com/tpope/vim-fugitive)

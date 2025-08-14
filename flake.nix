@@ -33,7 +33,6 @@
             src = self;
             dependencies = [
               prev.vimPlugins.fzfWrapper
-              prev.vimPlugins.vim-fugitive
             ];
           };
         };
