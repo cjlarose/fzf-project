@@ -44,7 +44,7 @@ function! s:getAllDirsFromWorkspaces(workspaces, depth)
   let l:nonProjectFolders = []
 
   for dir in split(l:dirs, "\n")
-    if FugitiveIsGitDir(dir . '/.git') || a:depth == s:projectDepth
+    if filereadable(dir . '/.git') || isdirectory(dir . '/.git') || a:depth == s:projectDepth
       call add(l:projectFolders, fnamemodify(dir, ':h'))
     else
       call add(l:nonProjectFolders, fnamemodify(dir, ':h'))
@@ -82,7 +82,7 @@ function! s:generateProjectListLines(dirParts, longest)
 endfunction
 
 function! s:initGitRepoIfRequired(behaviour)
-  if !FugitiveIsGitDir(getcwd() . '/.git')
+  if !filereadable(getcwd() . '/.git') && !isdirectory(getcwd() . '/.git')
     if a:behaviour ==# 'ask'
       let s:yesNo = input('Initialise git repository? (y/n) ')
     elseif a:behaviour ==# 'auto'
